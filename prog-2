@@ -1,9 +1,7 @@
 //program-2 
 
 #include<stdio.h>
-#include<conio.h>
-//#include<string.h>
-//#include<ctype.h>
+//#include<conio.h>
 void main(){
     char str[20];
     int state, i = 1;
