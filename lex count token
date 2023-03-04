@@ -1,0 +1,34 @@
+{%
+int n=0;
+%}
+%%
+“while”|”if”|”else”|”int”|”float” { n++; printf(“\t keywords:%s”, yytext); }
+[a-zA-Z]([a-zA-Z0-9])* { n++; printf(“\tidentifier:%s”,yytext); }
+“<=”|”<”|”++”|”+”|”*”|”==”|”(”|”)” { n++; printf(“\t oprator:%s”, yytext); }
+[0-9]+”.”[0-9]+|[0-9]+ { n++; printf(“\t constant:%s”, yytext); }
+[;:.]{ n++; printf(“\t delimiter:%s”, yytext); }
+%%
+void main()
+{
+printf(“enter input\n”);
+yylex();
+printf(“n o.of tokens is %d”, n);
+}
+int yywrap()
+{
+return 1;
+}
+
+
+Steps to execute lex program:
+lex prg8.l
+cc yy.lex.c
+./a.out
+Now give the input as below:
+for(i=1;i<=10;i++);
+press control+D
+it will print as below
+keyword: for operator:( identifier:i operator:= constant:1 delimiter:;
+identifier:i operator:<= constant:10 delimiter:; identifier:i operator:++
+operator:} delimiter:;
+no.of tokens is 14.
