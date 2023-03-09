@@ -8,7 +8,8 @@ sub "-"
 mul "*"
 div "/"
 pow "^"
-ln \n
+ln   \n
+
 %%
 {dig} {digi();} /*** digi() is a user defined function ***/
 {add} {op=1;}
@@ -16,7 +17,8 @@ ln \n
 {mul} {op=3;}
 {div} {op=4;}
 {pow} {op=5;}
-{ln} {printf("\n the result :%f\n\n",a);}
+{ln} {printf("\n the result :%f\n\n",c);}
+
 %%
 digi()
 {
@@ -52,14 +54,9 @@ return 1;
 }
 
 
-Steps to execute lex program:
-lex prg9.l
-cc yy.lex.c
+
+steps:
+lex calc.l
+cc lex.yy.c
 ./a.out
-Now give the input as below:
 23+46
-It will print output as
-69
-49/7
-It will print output as
-7
