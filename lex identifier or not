@@ -1,26 +1,13 @@
 %%
-[a-zA-Z]([a-zA-Z0-9])* { printf(“input is an identifier”); }
- . { printf(“not an identifier, invalid input”); }
+[a-zA-Z]([a-zA-Z0-9])* { printf("input is an identifier"); }
+ . { printf("not an identifier, invalid input"); }
 %%
 void main()
 {
-printf(“enter input\n”);
+printf("enter input\n");
 yylex();
 }
 int yywrap()
 {
 return 1;
 }
-
-
-Steps to execute lex program:
-lex prg6.l
-cc yy.lex.c
-./a.out
-Now give the input as below:
-abc
-It will print input is an identifier
-Sum1
-It will print input is a identifier
-123sum
-Not an identifier, invalid input
